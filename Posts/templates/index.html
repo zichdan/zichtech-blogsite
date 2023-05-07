@@ -7,8 +7,8 @@
 
 {% for post in posts  %}
     <div class="post">
-        <h2> {{ post.id }}. {{ post.tittle }}</h2>
-        <p>By <b>{{ post.author }}</b></p>
+        <a href="{% url 'post_detail' post_id=post.id %}" class="link"><h1>{{ post.id }}. {{ post.tittle }}</h1></a>
+        <p>By {{ post.content }}</p>
         <img src="{% static 'images/palm oi.png' %}" alt="photo" class="image">
     <div>
 {% endfor %}

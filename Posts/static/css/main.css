@@ -49,3 +49,10 @@ form{
     color: white;
     padding: 15px;
 }
+.limk{
+    color: black;
+    text-decoration: none;
+}
+.update_link{
+    color: brown;
+}

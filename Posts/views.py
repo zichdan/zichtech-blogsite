@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpRequest, HttpResponse
 from .forms import PostCreationForm
 from .models import Post
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -27,6 +28,7 @@ def services(request):
     }
     return render(request, 'services.html', context)
 
+@login_required
 def create_post(request):
     form = PostCreationForm()
     
@@ -49,7 +51,7 @@ def post_detail(request, post_id):
     context = {"post": post}
     return render(request, "post_detail.html",context)    
     
-    
+@login_required
 def update_post(request, post_id):
     post_to_update = Post.objects.get(pk=post_id)
     

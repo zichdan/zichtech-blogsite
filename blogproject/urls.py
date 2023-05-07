@@ -6,5 +6,5 @@ urlpatterns = [
     
     # Post-defined urls
     path('', include('Posts.urls')),
-    path('auth', include('Users.urls')),
+    path('auth/', include('Users.urls')),
 ]

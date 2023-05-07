@@ -7,15 +7,11 @@
 
 {% for post in posts  %}
     <div class="post">
-    <h2> {{ post.id }} | {{ post.tittle }}</h2>
-    <p>By <b>{{ post.author }}</b></p>
-    <img src="{% static 'images/palm oi.png' %}" alt="photo" class="image">
+        <h2> {{ post.id }}. {{ post.tittle }}</h2>
+        <p>By <b>{{ post.author }}</b></p>
+        <img src="{% static 'images/palm oi.png' %}" alt="photo" class="image">
     <div>
 {% endfor %}
  
 {% endblock content %}
        
-
-
-<h2> {{ post.id }} | {{ post.tittle }}</h2>
-    <p>By {{ post.author }}</p>

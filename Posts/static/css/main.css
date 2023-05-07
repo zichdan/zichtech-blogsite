@@ -5,7 +5,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 header{
-    background-color: aqua;
+    background-color: black;
     padding: 20px;
 }
 .nav-link{
@@ -29,7 +29,23 @@ a{
 
 form{
     margin-top: 100px;
-    margin: 20px;
+    margin: auto;
+    width: 50%;
 }
-
-
+.form-control{
+    width: 100%;
+    font-size: 20px;
+}
+.form-group{
+    margin-top: 10px;
+}
+.label{
+    margin-top: 20px;
+}
+.btn{
+    border: none;
+    background-color: aquamarine;
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+}

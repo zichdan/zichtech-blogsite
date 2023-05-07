@@ -31,19 +31,12 @@ def create_post(request):
     form = PostCreationForm()
     
     if request.method == "POST":
-        data = request.POST
+        form = PostCreationForm(request.POST, request.FILES)
         
-        tittle = (data['tittle'])
-        content = (data['content'])
-        author = (data['author'])
-        
-        new_post = Post(
-            tittle = tittle,
-            content = content,
-            author = author
-        )
-        new_post.save()
-        return redirect('post_home')
+        if form.is_valid():
+            form.save()
+            
+            return redirect('post_home')
     context={
         'form': form
     }
@@ -51,9 +44,17 @@ def create_post(request):
     
     
     
-# def return_one_post(request:HttpRequest, post_id):
-#     for post in posts:
-#         if post["id"] ==post_id:
-#             return HttpResponse(str(post))
+    # tittle = (data['tittle'])
+    #     content = (data['content'])
+    #     author = (data['author'])
+        
+    #     new_post = Post(
+    #         tittle = tittle,
+    #         content = content,
+    #         author = author
+    #     )
+    #     new_post.save()
     
-#     return HttpResponse("Not Found")
+    
+    
+    

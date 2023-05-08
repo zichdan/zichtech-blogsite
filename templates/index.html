@@ -12,6 +12,18 @@
         <img src="{% static 'images/palm oi.png' %}" alt="photo" class="image">
     <div>
 {% endfor %}
+<div class="pagination">
+        
+        {% if posts.has_previous %}
+            <a href="{% url 'post_home' %}?page={{ posts.previous_page_number }}">Previous</a>
+        {% endif %}
+            
+  
+    <p>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</p>
+    {% if posts.has_next %}
+    <a href="{% url 'post_home' %}?page={{ posts.next_page_number }}">Next</a>
+{% endif %}
+</div>
  
 {% endblock content %}
        

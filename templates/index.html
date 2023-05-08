@@ -2,16 +2,21 @@
 {% load static %}
 
 {% block content %}
-    
-<h1>List of posts</h1>
 
-{% for post in posts  %}
+<div class="posts">
+        
+    {% for post in posts  %}
     <div class="post">
-        <a href="{% url 'post_detail' post_id=post.id %}" class="link"><h1>{{ post.id }}. {{ post.tittle }}</h1></a>
-        <p>By {{ post.content }}</p>
-        <img src="{% static 'images/palm oi.png' %}" alt="photo" class="image">
+        <a href="{% url 'post_detail' post_id=post.id %}" class="link"
+        ><h1>{{ post.id }}| {{ post.tittle }}</h1></a>
+
+        <p class="post_content">{{ post.content }}</p>
+        <img src="{{ post.thumbnail.url }}" alt="thumbnail" class="image">
+        {% comment %} <img src="{% static 'images/palm oi.png' %}" alt="photo" class="image"> {% endcomment %}
     <div>
-{% endfor %}
+    {% endfor %}
+</div>
+
 <div class="pagination">
         
         {% if posts.has_previous %}

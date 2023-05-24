@@ -10,4 +10,5 @@ urlpatterns = [
     path('create_post/',views.CreatePostView.as_view(), name="create_post" ),
     path('post/<int:post_id>',views.post_detail, name="post_detail" ),
     path('post/update/<int:post_id>',views.update_post, name="update_post" ),
+    path('post/delete/<int:post_id>',views.delete_post, name="delete_post" ),
 ]

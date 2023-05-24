@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import get_object_or_404, render,redirect
 from django.http import HttpRequest, HttpResponse
+from django.urls import reverse
 from .forms import PostCreationForm
 from .models import Post
 from django.contrib.auth.decorators import login_required
@@ -89,7 +90,24 @@ def update_post(request, post_id):
         "form":form
     }
     return render(request, "update.html",context)    
+
+# def delete_post(request, post_id):
+#     post_to_delete = get_object_or_404(Post, pk=post_id)
+#     post_to_delete.delete()
+#     return redirect(reverse('post_home'))
+
+
+def delete_post(request, post_id):
+    post_to_delete = Post.objects.get(pk=post_id)
     
+    if post_to_delete:
+        try:
+            post_to_delete.delete()
+            return redirect(reverse('post_home'))       
+            
+        except:
+            return ("An Error occurred while trying to delete the")
+    return ("Post ID Not Found")       
 
 
 #  BASIC VIEWS WITHOUT THAT IS NOT CLASS_BASED

@@ -28,10 +28,14 @@ header{
     left: 0;
     position: relative;
     width: 100%;
+    z-index: 999;
 }
 header a{
     padding: 20px;
-    /* color: white; */
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
 }
 .navbar {
     width: 100%;
@@ -41,10 +45,12 @@ header a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 .navbar .logo a {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #fff;
 }
 .navbar .logo {
     background-color: orange;
@@ -55,9 +61,18 @@ header a{
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: bold;
+    cursor: pointer;
 }    
 .navbar .action_btn{
     background-color: orange;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 h1{
     margin-top: 20px;
@@ -76,10 +91,6 @@ a:hover {
     color: orange;
 }
 
-
-.post{
-    padding: 20px;
-}
 form{
     margin-top: 20px;
     margin: auto;
@@ -98,6 +109,10 @@ form{
 .form-control{
     width: 100%;
     font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid orange;
+    
 }
 .form-group{
     margin-top: 10px;
@@ -106,16 +121,33 @@ form{
     margin-top: 20px;
 }
 .btn{
+    margin-top: 20px;
+}
+.btn{
     border: none;
-    background-color: rgb(255, 238, 127);
+    background-color: rgb(150, 127, 255);
     cursor: pointer;
     color: white;
     padding: 15px;
+}
+.btn:hover{
+    background-color: rgb(127, 127, 255);
+}
+/* <|endoftext|> */
+.container {
+    width: 100%;
+}
+.container.row {
+    margin-left: 0;
+}
+.container.row.col-md-12 {
+    padding-left: 0;
 }
 .link{
     color: blue;
     text-decoration: none;
 }
+
 .update_link{
     color: rgb(34, 178, 75);
 }
@@ -136,6 +168,7 @@ form{
     text-align: center;
 }
 .pagination{
+    margin: 0;
     display: flex;
     justify-content: space-between;
     width: 60%;
@@ -146,6 +179,9 @@ form{
     width: 400px;
     height: 200px;
 }
+.post{
+    padding: 20px;
+} 
 .post_content{
     margin-top: 20px;
 }
@@ -155,8 +191,92 @@ form{
     margin-top: 100px;
 }
 .container{
-    margin-top: 100px;
+    margin-top: 50px;
 }
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .container{
+        width: 90%;
+    }
+    .posts{
+        width: 90%;
+    }
+    .post_content{
+        width: 90%;
+    }
+    .image{
+        width: 90%;
+    }
+    .pagination{
+        width: 90%;
+    }
+
+}
+@media (max-width: 425px) {
+    .container{
+        width: 90%;
+    }
+    .posts{
+        width: 90%;
+    }
+    .post_content{
+        width: 90%;
+    }
+    .image{
+        width: 90%;
+    }
+
+    .pagination{
+        width: 90%;
+    }
+}
+@media (max-width: 375px) {
+    .container{
+        width: 90%;
+    }
+    .posts{
+        width: 90%;
+    }
+    .post_content{
+        width: 90%;
+    }
+    .image{
+        width: 90%;
+    }
+    .pagination{
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .container{
+        width: 90%;
+    }
+    .posts{
+        width: 90%;
+    }
+    .post_content{
+        width: 90%;
+    }
+    .image{
+        width: 90%;
+    }
+    .pagination{
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
